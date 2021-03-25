@@ -2,14 +2,6 @@
 
 // Write your tests here!
 
-/*
-Polybius square:
-[x] When encoding, it translates the letters i and j to 42. -->
-[x] When decoding, it translates 42 to (i/j). -->
-[x] It ignores capital letters. (For example, the results of A Message and a message should be the same.) -->
-[x] It maintains spaces in the message, before and after encoding or decoding. -->
-*/
-
 const expect = require('chai').expect;
 const polybiusModule = require('../src/polybius');
 

@@ -13,8 +13,8 @@ describe('caesarModule.caesar ENCODING', () => {
     const testN25 = caesarModule.caesar();
     const test25 = caesarModule.caesar();
 
-    expect(test0).to.be.false;
-    expect(testN25).to.be.false;
+    expect(test0).to.be.false &&
+    expect(testN25).to.be.false &&
     expect(test25).to.be.false;
   });
 
