@@ -3,12 +3,12 @@ You are tasked with building functions for an application that will either encod
 
 Below is a checklist of what you need to accomplish.
 
-[ ] Complete the caesar() function. -->
-[ ] Write tests for the caesar() function. -->
+[x] Complete the caesar() function. -->
+[x] Write tests for the caesar() function. -->
 [ ] Complete the polybius() function. -->
-[ ] Write tests for the polybius() function. -->
+[x] Write tests for the polybius() function. -->
 [ ] Complete the substitution() function. -->
-[ ] Write tests for the substitution() function. -->
+[x] Write tests for the substitution() function. -->
 [ ] All tests are passing in Qualified. -->
 
 <!-- *************************************************************************************************************************************************************************************************************** -->
@@ -16,10 +16,10 @@ Below is a checklist of what you need to accomplish.
 To pass the project, all of the following must be true.
 
 Caesar shift:
-[ ] It returns false if the shift value is equal to 0, less than -25, greater than 25, or not present. -->
-[ ] It ignores capital letters. (For example, the results of A Message and a message should be the same.) -->
-[ ] When encoding, it handles shifts that go past the end of the alphabet. (For example, shifting z to the right by 3 should cause the z to wrap around to the front of the alphabet, so that z becomes c.) -->
-[ ] It maintains spaces and other nonalphabetic symbols in the message, before and after encoding or decoding. -->
+<!-- [x] It returns false if the shift value is equal to 0, less than -25, greater than 25, or not present. -->
+<!-- [x] It ignores capital letters. (For example, the results of A Message and a message should be the same.) -->
+<!-- [x] When encoding, it handles shifts that go past the end of the alphabet. (For example, shifting z to the right by 3 should cause the z to wrap around to the front of the alphabet, so that z becomes c.) -->
+<!-- [x] It maintains spaces and other nonalphabetic symbols in the message, before and after encoding or decoding. -->
 
 <!-- *************************************************************************************************************************************************************************************************************** -->
 

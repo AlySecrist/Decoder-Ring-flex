@@ -78,7 +78,7 @@ describe('caesar DECODING', () => {
   });
 
   it('should wrap letters at the end of the alphabet to the front of the alphabet on a negative shift', () => {
-    const actual = caesar('xubbe mehbt', -10, true);
+    const actual = caesar('xubbe mehbt', -10, false);
     const expected = 'hello world';
 
     expect(actual).to.equal(expected);
