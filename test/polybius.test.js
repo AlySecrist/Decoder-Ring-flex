@@ -37,7 +37,7 @@ describe('polybius ENCODING', () => {
   });
 
   it('should return the encoded message as string', () => {
-    const actual = typeof(polybius());
+    const actual = typeof(polybius('hello', true));
 
     expect(actual).to.be.a('string');
   });
