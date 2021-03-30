@@ -8,8 +8,49 @@
 const substitutionModule = (function () {
   // you can add any code you want within this function scope
 
+  const key = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+  function hasDuplicates(alphabet) {
+    for (let i = 0; i < alphabet.length; i++) {
+      const letter = alphabet[i];
+      if (alphabet.indexOf(letter) !== alphabet.lastIndexOf(letter)) return true;
+    }
+  }
+
+  function encodeCharacter(char, alphabet) {
+    for (let l = 0; l < key.length; l ++) {
+      const letter = key[l];
+      if (char === ' ') return char;
+      else if (letter === char) return alphabet[l];
+    }
+  }
+
+  function decodeCharacter(char, alphabet) {
+    for (let l = 0; l < alphabet.length; l++) {
+      const letter = alphabet[l];
+      if (char === ' ') return char;
+      else if (letter === char) return key[l];
+    }
+  }
+
   function substitution(input, alphabet, encode = true) {
     // your solution code here
+    
+    if (alphabet.length !== 26 || hasDuplicates(alphabet) === true) return false;
+
+    let result = '';
+  
+    for (let i = 0; i < input.length; i++) {
+      let char = input[i];
+      if (char.match(/[a-z]/i)) char = char.toLowerCase();
+
+      if (encode === true) {
+        result += encodeCharacter(char, alphabet);
+      } else if (encode === false) {
+        result += decodeCharacter(char, alphabet);
+      }
+    }
+    return result;
   }
 
   return {

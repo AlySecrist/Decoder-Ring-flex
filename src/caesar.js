@@ -5,7 +5,6 @@
 // Only add code (e.g., helper methods, variables, etc.) within the scope
 // of the anonymous function on line 8
 
-
 const caesarModule = (function () {
   // you can add any code you want within this function scope
   

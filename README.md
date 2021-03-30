@@ -24,7 +24,7 @@ Caesar shift:
 <!-- *************************************************************************************************************************************************************************************************************** -->
 
 Polybius square:
-[ ] When encoding, it translates the letters i and j to 42. -->
+<!-- [x] When encoding, it translates the letters i and j to 42. -->
 [ ] When decoding, it translates 42 to (i/j). -->
 [ ] It ignores capital letters. (For example, the results of A Message and a message should be the same.) -->
 [ ] It maintains spaces in the message, before and after encoding or decoding. -->
@@ -32,8 +32,8 @@ Polybius square:
 <!-- *************************************************************************************************************************************************************************************************************** -->
 
 Substitution Cipher:
-[ ] It returns false if the given alphabet isn't exactly 26 characters long. -->
-[ ] It correctly translates the given phrase, based on the alphabet given to the function. -->
-[ ] It returns false if there are any duplicate characters in the given alphabet. -->
-[ ] It maintains spaces in the message, before and after encoding or decoding. -->
-[ ] It ignores capital letters. (For example, the results of A Message and a message should be the same.) -->
+<!-- [x] It returns false if the given alphabet isn't exactly 26 characters long. -->
+<!-- [x] It correctly translates the given phrase, based on the alphabet given to the function. -->
+<!-- [x] It returns false if there are any duplicate characters in the given alphabet. -->
+<!-- [x] It maintains spaces in the message, before and after encoding or decoding. -->
+<!-- [x] It ignores capital letters. (For example, the results of A Message and a message should be the same.) -->
