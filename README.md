@@ -3,13 +3,13 @@ You are tasked with building functions for an application that will either encod
 
 Below is a checklist of what you need to accomplish.
 
-[x] Complete the caesar() function. -->
-[x] Write tests for the caesar() function. -->
-[ ] Complete the polybius() function. -->
-[x] Write tests for the polybius() function. -->
-[ ] Complete the substitution() function. -->
-[x] Write tests for the substitution() function. -->
-[ ] All tests are passing in Qualified. -->
+<!-- [x] Complete the caesar() function. -->
+<!-- [x] Write tests for the caesar() function. -->
+<!-- [x] Complete the polybius() function. -->
+<!-- [x] Write tests for the polybius() function. -->
+<!-- [x] Complete the substitution() function. -->
+<!-- [x] Write tests for the substitution() function. -->
+<!-- [x] All tests are passing in Qualified. -->
 
 <!-- *************************************************************************************************************************************************************************************************************** -->
 
@@ -25,9 +25,9 @@ Caesar shift:
 
 Polybius square:
 <!-- [x] When encoding, it translates the letters i and j to 42. -->
-[ ] When decoding, it translates 42 to (i/j). -->
-[ ] It ignores capital letters. (For example, the results of A Message and a message should be the same.) -->
-[ ] It maintains spaces in the message, before and after encoding or decoding. -->
+<!-- [x] When decoding, it translates 42 to (i/j). -->
+<!-- [x] It ignores capital letters. (For example, the results of A Message and a message should be the same.) -->
+<!-- [x] It maintains spaces in the message, before and after encoding or decoding. -->
 
 <!-- *************************************************************************************************************************************************************************************************************** -->
 

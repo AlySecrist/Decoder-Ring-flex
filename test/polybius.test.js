@@ -70,7 +70,7 @@ describe('polybius DECODING', () => {
   });
 
   it('should return false if the number of number characters for each encoded word is not even', () => {
-    const actual = polybius('325113134', false).length;
+    const actual = polybius('325113134', false);
 
     expect(actual).to.be.false;
   });

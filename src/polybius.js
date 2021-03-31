@@ -9,33 +9,98 @@ const polybiusModule = (function () {
   // you can add any code you want within this function scope
 
   const key = {
-    'a': '11', 'b': '21' ,'c': '31', 'd': '41', 'e': '51',
-    'f': '12', 'g': '22', 'h': '32', 'i': '42', 'j': '42', 'k': '52',
-    'l': '13', 'm': '23', 'n': '33', 'o': '43', 'p': '53', 
-    'q': '14', 'r': '24', 's': '34', 't': '44', 'u': '54',
-    'v': '15', 'w': '25', 'x': '35', 'y': '45', 'z': '55'
+    a: '11',
+    b: '21',
+    c: '31',
+    d: '41',
+    e: '51',
+    f: '12',
+    g: '22',
+    h: '32',
+    i: '42',
+    j: '42',
+    k: '52',
+    l: '13',
+    m: '23',
+    n: '33',
+    o: '43',
+    p: '53',
+    q: '14',
+    r: '24',
+    s: '34',
+    t: '44',
+    u: '54',
+    v: '15',
+    w: '25',
+    x: '35',
+    y: '45',
+    z: '55',
   };
+
+  function encodeCharacter(letter) {
+    for (let char in key) {
+      if (letter === char) {
+        return key[char];
+      }
+    }
+  }
+
+  function breakDown(input) {
+    
+  }
 
   function polybius(input, encode = true) {
     // your solution code here
     let result = '';
 
-    for (let i = 0; i < input.length; i++) {
-      const letter = input[i].toLowerCase();
-      // console.log(`input letter: ${letter}`);
+    if (encode === true) {
+      for (let i = 0; i < input.length; i++) {
+        const letter = input[i].toLowerCase();
 
-      if (!letter.match(/[a-z]/i)) {
-        result += letter;
-      } else if (encode === true) {
-        for (let char in key) {
-          if (letter === char) result += key[char];
+        if (!letter.match(/[a-z]/i)) {
+          result += letter;
+        } else result += encodeCharacter(letter);
+      } 
+    }
+    else if (encode === false) {
+      //break down phrase into words
+      const words = input.split(' ');
+      let charWords = [];
+      
+      //check for even length
+      if (words.some((word) => word.length % 2 !== 0)) return false;
+      
+      //break down words into characters
+      for (let i = 0; i < words.length; i++) {
+        const word = words[i];
+        charWords.push(word.match(/.{1,2}/g));
+      }
+
+      //loop over array of words
+      for (let i = 0; i < charWords.length; i ++) {
+        const word = charWords[i];
+
+        //loop over array of characters
+        for (let j = 0; j < word.length; j++) {
+          let char = word[j];
+          
+          //check for 42
+          if (char === '42') result += '(i/j)';
+
+          //loop over key object
+          else {
+            for(let c in key) {
+              //compare key to character
+              if (char === key[c]) result += c;
+            }
+          }
         }
-      }else if (encode === false) {
-        
+        result += ' ';
       }
     }
+
     // console.log(`result: ${result}`);
-    return result;
+    return result.trim();
   }
 
   return {
@@ -44,8 +109,6 @@ const polybiusModule = (function () {
 })();
 
 module.exports = polybiusModule.polybius;
-
-
 
 /*
   Polybius Square
