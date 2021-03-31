@@ -23,10 +23,12 @@ describe('substitution ENCODING', () => {
     expect(actual).to.equal(expected);
   });
 
-  it('should return false if the given alphabet has any duplicate characters', () => {
-    const actual = substitution('', 'qwertyuiopasdfghjklzxcvbnw', true);
+  it('should return false if the given alphabet has any duplicate characters or is missing', () => {
+    const dupe = substitution('hello world', 'qwertyuiopasdfghjklzxcvbnw', true);
+    const missing = substitution('hello world', '', true);
 
-    expect(actual).to.be.false;
+    expect(dupe).to.be.false &&
+    expect(missing).to.be.false;
   });
 
   it('should not alter spaces', () => {
@@ -63,10 +65,12 @@ describe('substitution DECODING', () => {
     expect(actual).to.equal(expected);
   });
 
-  it('should return false if the given alphabet has any duplicate characters', () => {
-    const actual = substitution('itssg vgksr', 'qwertyuiopasdfghjklzxcvbny', false);
+  it('should return false if the given alphabet has any duplicate characters or is missing', () => {
+    const dupe = substitution('itssg vgksr', 'qwertyuiopasdfghjklzxcvbny', false);
+    const missing = substitution('itssg vgksr', '', false);
 
-    expect(actual).to.be.false;
+    expect(dupe).to.be.false &&
+    expect(missing).to.be.false;
   });
 
   it('should not alter spaces', () => {

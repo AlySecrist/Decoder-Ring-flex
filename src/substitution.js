@@ -36,7 +36,7 @@ const substitutionModule = (function () {
   function substitution(input, alphabet, encode = true) {
     // your solution code here
     
-    if (alphabet.length !== 26 || hasDuplicates(alphabet) === true) return false;
+    if (! alphabet || alphabet.length !== 26 || hasDuplicates(alphabet) === true) return false;
 
     let result = '';
   
