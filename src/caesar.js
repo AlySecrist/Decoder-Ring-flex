@@ -10,21 +10,13 @@ const caesarModule = (function () {
   
   const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   
-  function encodeCharacter(letter, alphabet, shift, encode = true) {
+  function encodeCharacter(char, alphabet, shift, encode = true) {
     for (let i = 0; i < alphabet.length; i ++) {
-      if (letter === alphabet[i]) {
-        let encoded = i + shift;
-        
-        if (encode === false) {
-          encoded = i - shift;
-        }
-  
-        if (encoded > 25) {
-          encoded = -1 + (encoded - 25);
-        } else if (encoded < 0) {
-  
-          encoded = 26 + encoded;
-        }
+      if (char === alphabet[i]) {
+        let encoded;
+        encode === true ? encoded = i + shift : encoded = i - shift;
+
+        encoded > 25 ? encoded = -1 + (encoded - 25) : encoded < 0 ? encoded = 26 + encoded : encoded = encoded;
         
         return alphabet[encoded];
       }
@@ -39,11 +31,11 @@ const caesarModule = (function () {
     let result = '';
 
     for (let i = 0; i < input.length; i++) {
-      const letter = input[i].toLowerCase();
+      const char = input[i].toLowerCase();
 
-      if (!letter.match(/[a-z]/i)) {
-        result += letter;
-      } else result += encodeCharacter(letter, alphabet, shift, encode);
+      if (!char.match(/[a-z]/i)) {
+        result += char;
+      } else result += encodeCharacter(char, alphabet, shift, encode);
     }
     return result;
   }

@@ -38,37 +38,35 @@ const polybiusModule = (function () {
   };
 
   function encodeCharacter(letter) {
-    //loop over key array
     for (let char in key) {
-      //compare input letter to character in key
       if (letter === char) {
-        //return if matching
         return key[char];
       }
     }
   }
 
   function breakDown(input) {
-    //break down phrase into words
+    //break down phrase into individual words
     const words = input.split(' ');
-    let charWords = [];
     
-    //check for even length
+    //check for even length of words
     if (words.some((word) => word.length % 2 !== 0)) return false;
+    
+    let wordChars = [];
     
     //break down words into characters
     for (let i = 0; i < words.length; i++) {
       const word = words[i];
-      charWords.push(word.match(/.{1,2}/g));
+      wordChars.push(word.match(/.{1,2}/g));
     }
-    return charWords;
+    return wordChars;
   }
 
-  function decode(charWords) {
+  function decode(wordChars) {
     let result = '';
     //loop over array of words
-    for (let i = 0; i < charWords.length; i ++) {
-      const word = charWords[i];
+    for (let i = 0; i < wordChars.length; i ++) {
+      const word = wordChars[i];
 
       //loop over array of characters
       for (let j = 0; j < word.length; j++) {
@@ -106,11 +104,11 @@ const polybiusModule = (function () {
         } else result += encodeCharacter(letter);
       } 
     } else if (encode === false) {
-      const charWords = breakDown(input);
+      const wordChars = breakDown(input);
 
-      if (charWords === false) return charWords;
+      if (wordChars === false) return wordChars;
     
-      result += decode(charWords);  
+      result += decode(wordChars);  
     }
     return result.trim();
   }

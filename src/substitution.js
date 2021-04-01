@@ -44,11 +44,7 @@ const substitutionModule = (function () {
       let char = input[i];
       if (char.match(/[a-z]/i)) char = char.toLowerCase();
 
-      if (encode === true) {
-        result += encodeCharacter(char, alphabet);
-      } else if (encode === false) {
-        result += decodeCharacter(char, alphabet);
-      }
+      encode === true ? result += encodeCharacter(char, alphabet) : result += decodeCharacter(char, alphabet);
     }
     return result;
   }
